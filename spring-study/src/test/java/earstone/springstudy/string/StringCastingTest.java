@@ -14,14 +14,16 @@ public class StringCastingTest {
     @Test
     void stringTest() {
         //given
+        int num = 10;
         Map<String, Object> map = new HashMap<>();
         map.put("noObj", 10);
 
         //when
-        System.out.println(map.get("noObj"));
         String numObjStr = (String) map.get("noObj");
+        String numStr = String.valueOf(num);
 
         //then
         assertThat(numObjStr).isEqualTo("10");
+        assertThat(numStr).isEqualTo("10");
     }
 }
